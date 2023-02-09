@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ import 'package:livraison_app/Controller/Restaurants_controller.dart';
 import 'SearchScreen.dart';
 class CategoryScreen extends StatelessWidget {
   final String category_name ;
+
   CategoryScreen({Key? key, required this.category_name}) : super(key: key);
 
   Restaurants_controller controller = Get.put(Restaurants_controller()) ;
@@ -19,7 +21,6 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(RestaurantController()) ;
     return
-
       SafeArea(
           child: Scaffold(
               body:
@@ -29,39 +30,44 @@ class CategoryScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 34.h,),
-                    Positioned(
-                      top: 10.h,
-                      left: 13.w,
-                      child: SizedBox(
-                        height: 28.h,
-                        width: 29.w,
-                        child: FloatingActionButton(
-                          foregroundColor:  Color(0xffDFDFDF) ,
-                          onPressed: () {
-                            Get.back() ;
-                          },
-                          child: Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
-                            size: 20.sp,
+                    SizedBox(height: 25.h,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+
+                      children: [
+                        SizedBox(width:13.w) ,
+                        Positioned(
+                          top: 10.h,
+                          left: 13.w,
+                          child: SizedBox(
+                            height: 28.h,
+                            width: 29.w,
+                            child: FloatingActionButton(
+                              foregroundColor:  Color(0xffDFDFDF) ,
+                              onPressed: () {
+                                Get.back() ;
+                              },
+                              child: Icon(
+                                Icons.arrow_back,
+                                color: Colors.black,
+                                size: 20.sp,
+                              ),
+                              backgroundColor: Color(0xffDFDFDF),
+                            ),
                           ),
-                          backgroundColor: Color(0xffDFDFDF),
                         ),
-                      ),
+                      ],
                     ),
+                    SizedBox(height:10.h) ,
                     Row(
                       children: [
-                        Spacer(flex: 14,),
-                        Expanded(
-                          flex: 400,
-                          child: Align(
-                            alignment: Alignment.topLeft,
-                            child: AutoSizeText(
-                              '$category_name',
-                              maxLines: 1,
-                              style: TextStyle(fontSize: 28.sp, fontFamily: 'Golos'),
-                            ),
+                        SizedBox(width: 13.w,),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: AutoSizeText(
+                            '$category_name',
+                            maxLines: 1,
+                            style: TextStyle(fontSize: 28.sp, fontFamily: 'Golos'),
                           ),
                         ),
                       ],
@@ -74,27 +80,16 @@ class CategoryScreen extends StatelessWidget {
                             itemCount: controller.restaurants.length,
                             physics: NeverScrollableScrollPhysics(),
                             itemBuilder: (context, index) {
-                              return Row(
+                              return Column(
                                 children: [
-                                  Spacer(flex: 14,),
-                                  Expanded(
-                                    flex:400,
-                                    child: Container(
-                                      height: 320.h,
-                                      width: double.maxFinite,
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            height: 300.h,
-                                            width: double.maxFinite,
-                                            child: controller.restaurants[index] ,
-                                          ),
-                                          SizedBox(width: 10.w,) ,
-                                        ],
-                                      ),
-                                    ),
+                                  Row(
+                                    children: [
+                                      SizedBox(width: 13.w,),
+                                      controller.restaurants[index],
+                                      // Spacer(flex: 14,)
+                                    ],
                                   ),
-                                  // Spacer(flex: 14,)
+                                  SizedBox(height: 30.h,)
                                 ],
                               ) ;
                             }) : shimmer_restaurant(controller.restaurants) ;})

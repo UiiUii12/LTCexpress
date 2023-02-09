@@ -32,14 +32,14 @@ class SearchController extends GetxController {
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza1',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza2',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -58,14 +58,14 @@ class SearchController extends GetxController {
           [
           Food(
             image: 'assets/images/Pizza.png',
-            name: ' Mega Pizza',
+            name: ' Mega Pizza4',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza5',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -81,7 +81,7 @@ class SearchController extends GetxController {
     ),
     Restaurant(
       image: 'assets/images/rest.jpg',
-      name: 'DamiS',
+      name: 'DamiSSSS',
       category: [
         Category(
           'Pizza',
@@ -89,35 +89,35 @@ class SearchController extends GetxController {
           [
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Pizza Poulet',
+            name: 'Pizza Poulet1',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza6',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza7',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizza8',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Pizza 4 Fromages',
+            name: 'Pizza 4 Fromages1',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -129,14 +129,14 @@ class SearchController extends GetxController {
           [
           Food(
             image: 'assets/images/Pizza.png',
-            name: ' Mega Pizza',
+            name: ' Mega Pizza9',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizzaa',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -152,7 +152,7 @@ class SearchController extends GetxController {
     ),
     Restaurant(
       image: 'assets/images/rest.jpg',
-      name: 'DamiS',
+      name: 'DamiiiiiiiiiiS',
       category: [
         Category(
           'Pizza',
@@ -160,35 +160,35 @@ class SearchController extends GetxController {
             [
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Pizza Poulet',
+            name: 'Pizza Pouletttt',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Pizzzzza',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Piiiiizza',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Mega Ppppizza',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Pizza 4 Fromages',
+            name: 'Pizza 4 Fromagesssss',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -200,14 +200,14 @@ class SearchController extends GetxController {
             [
           Food(
             image: 'assets/images/Pizza.png',
-            name: ' Mega Pizza',
+            name: ' Meeeega Pizza',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
           ),
           Food(
             image: 'assets/images/Pizza.png',
-            name: 'Mega Pizza',
+            name: 'Meggga Pizza',
             prix: 500,
             description: 'Fromage, Poulet, Sauce Fromage',
             ajouter: false.obs,
@@ -236,7 +236,7 @@ class SearchController extends GetxController {
       'Pizza': [
         Food_Search(
           image: 'assets/images/Pizza.png',
-          name: 'Pizza Poulet',
+        name: '1PPizza Poulet',
           prix: 500,
           description: 'Fromage, Poulet, Sauce Fromage',
           restaurant: Restaurant(
@@ -249,28 +249,28 @@ class SearchController extends GetxController {
                 [
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Pizza Poulet',
+                  name: '1PPizza Poulet',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '2MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '3MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '4MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
@@ -313,12 +313,12 @@ class SearchController extends GetxController {
         ),
         Food_Search(
           image: 'assets/images/Pizza.png',
-          name: 'Pizza Poulet',
+          name: '1PPizza Poulet',
           prix: 500,
           description: 'Fromage, Poulet, Sauce Fromage',
           restaurant: Restaurant(
             image: 'assets/images/rest.jpg',
-            name: 'DamiS',
+            name: 'DamamiS',
             category: [
               Category(
                 'Pizza',
@@ -326,35 +326,35 @@ class SearchController extends GetxController {
                   [
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Pizza Poulet',
+                  name: '1PPizza Poulet',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '1MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '2MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '3MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Pizza 4 Fromages',
+                  name: '4PPizza 4 Fromages',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
@@ -366,14 +366,14 @@ class SearchController extends GetxController {
                   [
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: ' Mega Pizza',
+                  name: ' 7MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
                 ),
                 Food(
                   image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
+                  name: '9MMega Pizza',
                   prix: 500,
                   description: 'Fromage, Poulet, Sauce Fromage',
                   ajouter: false.obs,
@@ -388,86 +388,10 @@ class SearchController extends GetxController {
                 TimeOfDay(hour: 21, minute: 46)),
           ),
         ),
-        Food_Search(
-          image: 'assets/images/Pizza.png',
-          name: 'Pizza Poulet',
-          prix: 500,
-          description: 'Fromage, Poulet, Sauce Fromage',
-          restaurant: Restaurant(
-            image: 'assets/images/rest.jpg',
-            name: 'DamiS',
-            category: [
-              Category(
-                'Pizza',
-                'assets/images/pizza.svg',
-                [
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Pizza Poulet',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                ),
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                ),
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                ),
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                ),
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Pizza 4 Fromages',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                )
-              ],),
-              Category(
-                'Tacos',
-                  'assets/images/tacos.svg',
-                  [
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: ' Mega Pizza',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                ),
-                Food(
-                  image: 'assets/images/Pizza.png',
-                  name: 'Mega Pizza',
-                  prix: 500,
-                  description: 'Fromage, Poulet, Sauce Fromage',
-                  ajouter: false.obs,
-                )
-              ], ),
-              Category( 'Tacos','assets/images/tacos.svg',[],),
-              Category( 'Burger','assets/images/tacos.svg',[],)
-            ].obs,
-            adress: 'Oran ,Oran',
-            state: true,
-            openTime: OpenTime(TimeOfDay(hour: 23, minute: 32),
-                TimeOfDay(hour: 21, minute: 46)),
-          ),
-        )
+
       ]
     },
-    {
+   /* {
       'Salade': [
         Food_Search(
           image: 'assets/images/Pizza.png',
@@ -903,7 +827,7 @@ class SearchController extends GetxController {
           ),
         ),
       ]
-    }
+    }*/
   ];
 
   void scroll(var visible) {
@@ -911,4 +835,3 @@ class SearchController extends GetxController {
     update();
   }
 }
-//controller.position.userScrollDirection == ScrollDirection.forward

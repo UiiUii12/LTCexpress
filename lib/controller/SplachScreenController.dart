@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
+import 'package:livraison_app/View/OnBoardingScreen.dart';
 import 'package:livraison_app/view/LoginScreen.dart';
 
 
@@ -10,7 +11,8 @@ class SplashScreenController extends GetxController{
     super.onInit();
     Timer(
         Duration(milliseconds:6000),
-        ()=>Get.off(LoginScreen()));
+        ()=>Get.off(OnBoardingScreen()));
 
   }
+
 }

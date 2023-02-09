@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
-Widget customWithButtonDialog({required title,required ligne1,required ligne2,required asset}){
+Widget customWithButtonDialog({required title,required ligne1,required ligne2,required asset,fonction} ){
   return Column(
     children: [
       Spacer(flex: 210,),
       Expanded(
         flex:362,
         child: Dialog(
-          insetAnimationDuration: Duration(milliseconds: 100),
+        //  insetAnimationDuration: Duration(milliseconds: 100),
           child: Container(
             decoration:BoxDecoration(
                 borderRadius: BorderRadius.circular(30)
@@ -47,7 +47,7 @@ Widget customWithButtonDialog({required title,required ligne1,required ligne2,re
                       child: Container(
                         height: 50.h,
                         child: ElevatedButton(
-                            onPressed:(){},
+                            onPressed:()=>fonction,
                             child: Text(
                               'Réessayer',
                               style: TextStyle(

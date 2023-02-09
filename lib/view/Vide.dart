@@ -1,33 +1,23 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
-
-class Vide extends StatelessWidget {
-  Vide({Key? key}) : super(key: key);
 
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+  Widget Vide() {
+    return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(flex: 313,),
-          Expanded(
-            flex: 300,
-            child: Row(
-              children: [
-                Spacer(flex: 64,),
-                Container(
-                  child: Lottie.asset('assets/json/empty.json',animate: true,repeat: true),),
-                Spacer(flex: 64,),
-              ],
-            ),
-          ),
-          Spacer(flex: 313,),
+          SizedBox(height: 151.h,),
+          Container(
+            height: 300.h,
+            width: 300.w,
+            child: Lottie.asset('assets/json/empty.json',animate: true,repeat: true),),
+          SizedBox(height: 236.h,)
         ],
-      ),
-    );
-  }
+      );
+
   }
 

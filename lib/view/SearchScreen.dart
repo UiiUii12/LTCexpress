@@ -8,6 +8,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:livraison_app/Controller/SearchController.dart';
+import '../Controller/AppController.dart';
+import '../Themes/Theme.dart';
 import '../Controller/LoginScreenController.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -31,7 +33,7 @@ class SearchScreen extends StatelessWidget {
                     width: 13.w,
                   ),
                   AutoSizeText(
-                    'Salut ${LoginScreenController.user.nom} ,\nBienvenue dans notre magasin !',
+                    'Salut ${AppController.user.nom} ,\nBienvenue dans notre magasin !',
                     style: TextStyle(
                       fontSize: 15.sp,
                       fontFamily: 'Golos',
@@ -56,11 +58,6 @@ class SearchScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(EvaIcons.search, color: Color(0xff9D9D9D)),
                           hintText: 'Trouvez votre restaurant, votre produit',
-                          hintStyle: TextStyle(
-                            fontFamily: 'Golos',
-                            fontSize: 18,
-                            color: Color(0xff9D9D9D),
-                          ),
                           contentPadding: EdgeInsets.symmetric(
                             vertical: 15.h,
                           ),
@@ -81,14 +78,10 @@ class SearchScreen extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(width: 13.w,),
-                  AutoSizeText(
-                    'Restaurants',
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontFamily: 'Golos',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  controller.restaurants.length != 0 ? AutoSizeText( 'Restaurant',
+                      style:theme().textTheme.headline4
+
+                  ) : Container() ,
                 ],
               ),
               SizedBox(height: 17.h,),
@@ -114,64 +107,56 @@ class SearchScreen extends StatelessWidget {
                       ],
                     )),
               ),
-              SizedBox(height: 28.h,),
+              //SizedBox(height: 28.h,),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 itemCount: controller.food.length,
                 itemBuilder: (context, index2) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 13.w,),
-                          AutoSizeText(
-                            controller.food[index2].keys.single,
-                            style:TextStyle(
-                              fontSize: 18.sp,
-                              fontFamily: 'Golos',
-                              fontWeight: FontWeight.w500,
-                            ),
-                            textAlign: TextAlign.start,
-                          ),
+                  return
 
-                      ],),
-                      SizedBox(
-                        height: 20.w,
-                      ),
-                      Container(
-                        height: 206.h,
-                        child: ListView.builder(
+                    Column(
+                      children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+
+                            children: [
+                              SizedBox(width:13.w) ,
+                              AutoSizeText(controller.food[index2].keys.single,
+                                style:theme().textTheme.headline4 , textAlign: TextAlign.start,
+                              ) , ]) ,
+                        SizedBox(height: 10.w,) ,
+                        Container(
+                          height : 220.h ,
+                          child: ListView.builder(
                               physics: BouncingScrollPhysics(),
                               shrinkWrap: true,
                               scrollDirection: Axis.horizontal,
-                              itemCount: controller.food[index2]
-                                  .values.single.length,
-                              itemBuilder: (context, index3) {
+                              itemCount  : controller.food[index2].values.single.length,
+                              itemBuilder: (context , index3) {
                                 return Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.start,
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    SizedBox(width: 13.w,),
+                                    SizedBox(width: 13.w,) ,
                                     Container(
-                                      height: 206.h,
-                                      width: 281.w,
-                                      child: controller.food[index2].values.single[index3],
+                                      height: 220.h ,
+                                      width:281.w ,
+                                      child:
+                                      controller.food[index2].values.single[index3],
                                     ),
+
                                   ],
                                 );
                               }),
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                    ],
-                  );
+                        ) ,
+                        SizedBox(height: 20.h,) ,
+                      ],
+
+                    ) ;
                 },
               )
             ],

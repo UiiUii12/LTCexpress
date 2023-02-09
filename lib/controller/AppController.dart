@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -8,11 +7,15 @@ import 'package:livraison_app/View/OnBoarding_Pages.dart';
 import 'package:livraison_app/Widgets/customDialog.dart';
 import 'package:livraison_app/Widgets/customWithButtonDialog.dart';
 
+import '../classes/commande.dart';
+import '../classes/user.dart';
+
 class AppController extends GetxController{
+  static late User user;
+
    late PageController controller ;
    int page_index=0 ;
    var connectionType = 0.obs;
-   final Connectivity _connectivity = Connectivity();
    late StreamSubscription _streamSubscription;
    final List<OnBoard> pages = [
      OnBoard(image: 'lib/Asset/Images/onBoardingImage1.png', title: "Le temps est précieux , n'est-ce pas?",
@@ -87,10 +90,11 @@ class AppController extends GetxController{
      update() ;
    }
 
-  static void showDialogButton(String title,String ligne1,String ligne2,String asset)async{
+  static void showDialogButton(String title,String ligne1,String ligne2,String asset,void function)async{
      Get.dialog(
-       barrierDismissible:false,
+       barrierDismissible:true,
        customWithButtonDialog(
+         fonction: ()=>function,
          title:title,
          ligne1: ligne1,
          ligne2: ligne2,
@@ -98,8 +102,10 @@ class AppController extends GetxController{
        ),
      );
    }
-
-   static void showDialogLogin(ligne1,ligne2)async{
+ static  void createNewUser(String nom,String numTel,String adresse, RxList<Commande> list){
+    user=User(nom:nom,numeroTelephone:numTel,Adresse:adresse,Commandes:list);
+  }
+  static void showDialogLogin(ligne1,ligne2)async{
      Get.dialog(
          barrierDismissible:false,
          customDialog(

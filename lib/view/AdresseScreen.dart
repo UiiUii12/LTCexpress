@@ -94,6 +94,7 @@ class AdresseScreen extends StatelessWidget {
                           fontFamily: 'Golos',
                           fontSize: 18.sp),
                       cursorColor: Colors.grey,
+                      autofocus: false,
                       enabled: true,
                       decoration: InputDecoration(
                         prefixIcon: Icon(
@@ -134,7 +135,7 @@ class AdresseScreen extends StatelessWidget {
                   child: GetBuilder(
                     builder:(AdresseScreenController controller)=> ElevatedButton(
                       onPressed: controller.submitAdresse?()async {
-                        print(controller.Adresse.text);
+                        FocusScope.of(context).unfocus();
                        controller.addAdresseUser(controller.Adresse.text);
                        Navigator.push(
                             context,

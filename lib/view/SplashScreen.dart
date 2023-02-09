@@ -10,8 +10,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SplashScreenController controller =
-    Get.put(SplashScreenController());
+    SplashScreenController controller = Get.put(SplashScreenController());
     return Scaffold(
       body: GetBuilder(
         init:SplashScreenController() ,
@@ -19,10 +18,6 @@ class SplashScreen extends StatelessWidget {
          return Container(
             decoration: BoxDecoration(
               color: Color(0xffE6424B),
-              /* image: DecorationImage(
-              image: AssetImage('assets/images/backgroundImage.png'),
-              fit: BoxFit.cover,
-            )*/
             ),
             child: Center(
               child:  SpinKitThreeBounce(

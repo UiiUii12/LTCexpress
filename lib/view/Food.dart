@@ -11,9 +11,9 @@ class Food extends StatelessWidget {
   final String name ;
   final double prix ;
   final String description ;
-  var List_of_food ;
-
-  Food( {Key? key,  required this.image,  required this.name, required this.prix , required this.ajouter ,   this.List_of_food, required this.description,  }) : super(key: key) ;
+  var  List_of_food;
+  var nom_restaurant ;
+  Food( {Key? key,  required this.image,  required this.name, required this.prix , required this.ajouter , this.nom_restaurant ,  required this.description,this.List_of_food  }) : super(key: key) ;
   var ajouter = false.obs  ;
   final counter = 1.obs ;
   @override
@@ -63,9 +63,9 @@ class Food extends StatelessWidget {
               GetX<FoodController>(
                 builder: ( controller){
                   return ElevatedButton(onPressed:(){
-
-                    controller.Continuer(ajouter,  Food(image: image, name: name, prix: prix, description: description, ajouter: ajouter,    ) , List_of_food) ;
-                    print(ajouter) ;
+                    controller.ajouter_annuler(
+                        List_of_food  ,
+                        Food(image: image, name: name, prix: prix, description: description, ajouter: ajouter,    ) , nom_restaurant ) ;
                   },
                     child: AutoSizeText(ajouter.value ? 'Annuler' : 'Ajouter' ,
                         style: ajouter.value ? theme().textTheme.bodyText2?.copyWith(color: Color(0xffE6424B)) : theme().textTheme.bodyText2?.copyWith(color: Color(0xff669965))

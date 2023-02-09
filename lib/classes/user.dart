@@ -1,14 +1,17 @@
+import 'package:flutter/cupertino.dart';
+
+import 'commande.dart';
+import 'commande.dart';
+import 'commande.dart';
 import 'commande.dart';
 
 class User{
 
-  User(String nom,String numeroTelephone){
-    this.nom=numeroTelephone;
-    this.numeroTelephone='213$numeroTelephone';
+    String nom;
+    String numeroTelephone;
+    String Adresse;
+    List<Commande> Commandes;
+    User({Key? key,required this.nom,required this.numeroTelephone,required this.Adresse,required this.Commandes}) ;
 
-  }
-  late String nom;
-  late String numeroTelephone;
-  late String Adresse;
 
 }

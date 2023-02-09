@@ -1,5 +1,4 @@
 class Plat {
-
   final String name ;
   final double prix ;
   final String description ;

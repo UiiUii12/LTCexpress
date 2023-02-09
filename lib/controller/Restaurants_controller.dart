@@ -9,7 +9,7 @@ import 'package:livraison_app/classes/OpenTime.dart';
 class Restaurants_controller extends GetxController {
   bool is_loaded = false;
   final List<Restaurant> restaurants = [
-    Restaurant(
+   /* Restaurant(
       image: 'assets/images/Restaurant1.png',
       name: 'Magic Pizza',
       category: [
@@ -219,7 +219,7 @@ class Restaurants_controller extends GetxController {
       state: true,
       openTime: OpenTime(
           TimeOfDay(hour: 23, minute: 32), TimeOfDay(hour: 21, minute: 46)),
-    ),
+    ),*/
     Restaurant(
       image: 'assets/images/Restaurant1.png',
       name: 'Magic Pizza',
@@ -234,6 +234,7 @@ class Restaurants_controller extends GetxController {
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
             ),
             Food(
               image: 'assets/images/Pizza.png',
@@ -241,17 +242,18 @@ class Restaurants_controller extends GetxController {
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'Pizza Simple',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'Pizza 4 saisons',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
@@ -270,14 +272,14 @@ class Restaurants_controller extends GetxController {
           [
             Food(
               image: 'assets/images/Pizza.png',
-              name: ' Mega Pizza',
+              name: 'tacos simple',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'tacos poulet',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
@@ -291,7 +293,7 @@ class Restaurants_controller extends GetxController {
       openTime: OpenTime(
           TimeOfDay(hour: 23, minute: 32), TimeOfDay(hour: 21, minute: 46)),
     ),
-    Restaurant(
+   /* Restaurant(
       image: 'assets/images/rest.jpg',
       name: 'DamiS',
       category: [
@@ -430,7 +432,7 @@ class Restaurants_controller extends GetxController {
       state: true,
       openTime: OpenTime(
           TimeOfDay(hour: 23, minute: 32), TimeOfDay(hour: 21, minute: 46)),
-    ),
+    ),*/
   ];
   @override
   void onInit() {

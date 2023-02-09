@@ -1,17 +1,23 @@
 import 'dart:async';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_ticket_provider_mixin.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:livraison_app/View/Food.dart';
+import 'package:livraison_app/View/currentPage.dart';
 import 'package:livraison_app/classes/Category.dart';
 import 'package:livraison_app/classes/OpenTime.dart';
+import '../View/CartScreen.dart';
+import '../View/HomeScreen.dart';
+import '../View/MesCommandes.dart';
+import '../View/SearchScreen.dart';
+import 'CartController.dart';
 import 'FoodController.dart';
 
 class RestaurantScreen_controller extends GetxController
     with GetTickerProviderStateMixin {
+ //  RxList <Food> List_of_food  =<Food>[].obs ;
   bool is_loaded = false;
   late TabController tabController;
 
@@ -60,11 +66,10 @@ class RestaurantScreen_controller extends GetxController
       is_opened.value = false;
     } else {
       is_opened.value = true;
-      print('//////////////////////////////////////////////////////::::::');
     }
-    print(time.minute);
+
     update();
-    print(is_opened);
+
   }
 
   void ListOfFood(List continuer, var somme) {
@@ -73,14 +78,6 @@ class RestaurantScreen_controller extends GetxController
     }
 
     update();
-  }
-
-  void Reinitialize(List<Category> category) {
-    for (Category cat in category) {
-      for (Food food in cat.plat) {
-        food.ajouter.value = false;
-      }
-    }
   }
 
   @override
@@ -93,8 +90,28 @@ class RestaurantScreen_controller extends GetxController
   @override
   void onClose() {
     tabController.dispose();
-    //  FoodController().dispose() ;
-
     super.onClose();
   }
-}
+  void continuer ( String name,RxList<Food> list)
+    {
+      CartController.commande.restaurant=name ;
+      CartController.commande.plats=list.value ;
+      Main_Page.interfaces=[ HomeScreen(),SearchScreen() ,  CartScreen()  ,MesCommandesScreen()];
+      Main_Page.currentindex=2 ;
+      Get.to(Main_Page()) ;
+      update();
+  }
+   void Go_back(List<Category> category) {
+  for (Category cat in category) {
+      for(Food food in cat.plat){
+        int index=CartController.commande.plats.indexOf(food);
+        index==-1? (){food.ajouter.value=false;}():food.ajouter.value=true;
+      }
+       }
+  print(CartController.commande.plats.length);
+   update();
+     }
+
+
+  }
+

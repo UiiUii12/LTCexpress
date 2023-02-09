@@ -26,6 +26,7 @@ class HomeScreenController extends GetxController {
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
             ),
             Food(
               image: 'assets/images/Pizza.png',
@@ -33,17 +34,18 @@ class HomeScreenController extends GetxController {
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'Pizza Simple',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'Pizza 4 saisons',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
@@ -62,14 +64,14 @@ class HomeScreenController extends GetxController {
           [
             Food(
               image: 'assets/images/Pizza.png',
-              name: ' Mega Pizza',
+              name: 'tacos simple',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'tacos poulet',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
@@ -84,8 +86,8 @@ class HomeScreenController extends GetxController {
           TimeOfDay(hour: 23, minute: 32), TimeOfDay(hour: 21, minute: 46)),
     ),
     Restaurant(
-      image: 'assets/images/rest.jpg',
-      name: 'DamiS',
+      image: 'assets/images/Restaurant1.png',
+      name: 'Amigos burger',
       category: [
         Category(
           'Pizza',
@@ -93,35 +95,37 @@ class HomeScreenController extends GetxController {
           [
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Pizza Poulet',
+              name: 'Pizza chicken',
+              prix: 500,
+              description: 'Fromage, Poulet, Sauce Fromage',
+              ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
+            ),
+            Food(
+              image: 'assets/images/Pizza.png',
+              name: 'Mega Pizza3',
+              prix: 500,
+              description: 'Fromage, Poulet, Sauce Fromage',
+              ajouter: false.obs,
+              nom_restaurant: 'Magic Pizza',
+            ),
+            Food(
+              image: 'assets/images/Pizza.png',
+              name: 'Pizza Marguerite',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
+              name: 'Pizza ines',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Pizza 4 Fromages',
+              name: 'Pizza vache qui rit',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
@@ -133,91 +137,22 @@ class HomeScreenController extends GetxController {
           [
             Food(
               image: 'assets/images/Pizza.png',
-              name: ' Mega Pizza',
+              name: 'tacos ordinaire',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             ),
             Food(
               image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            )
-          ], ),
-        Category( 'Tacos','assets/images/tacos.svg',[],),
-        Category( 'Burger','assets/images/burger.svg',[],)
-      ].obs,
-      adress: 'Oran ,Oran',
-      state: true,
-      openTime: OpenTime(
-          TimeOfDay(hour: 23, minute: 32), TimeOfDay(hour: 21, minute: 46)),
-    ),
-    Restaurant(
-      image: 'assets/images/rest2.jpg',
-      name: 'Play Food',
-      category: [
-        Category(
-          'Pizza',
-          'assets/images/pizza.svg',
-          [
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Pizza Poulet',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Pizza 4 Fromages',
+              name: 'tacos chicken',
               prix: 500,
               description: 'Fromage, Poulet, Sauce Fromage',
               ajouter: false.obs,
             )
           ],),
-        Category(
-          'Tacos',
-          'assets/images/tacos.svg',
-          [
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: ' Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            ),
-            Food(
-              image: 'assets/images/Pizza.png',
-              name: 'Mega Pizza',
-              prix: 500,
-              description: 'Fromage, Poulet, Sauce Fromage',
-              ajouter: false.obs,
-            )
-          ], ),
-        ].obs,
+        Category('Tacos','assets/images/tacos.svg',[],),
+        Category('Burger','assets/images/burger.svg',[],)
+      ].obs,
       adress: 'Oran ,Oran',
       state: true,
       openTime: OpenTime(

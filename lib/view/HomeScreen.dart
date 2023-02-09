@@ -1,5 +1,6 @@
 //import 'dart:html';
 import 'dart:math';
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,36 +10,31 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:livraison_app/Controller/LoginScreenController.dart';
 import 'package:livraison_app/Controller/RestaurantController.dart';
+import 'package:livraison_app/View/AdresseScreen.dart';
 import 'package:livraison_app/View/RestaurantsScreen.dart';
 import 'package:livraison_app/classes/promotion.dart';
 import 'package:livraison_app/Controller/HomeScreenController.dart';
-
-import 'RestaurantScreen.dart';
+import '../Controller/AppController.dart';
 import 'categoryScreen.dart';
+import 'package:livraison_app/View/AdresseScreen.dart';
 
-class Home extends StatelessWidget {
-  Home({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     HomeScreenController controller = Get.put(HomeScreenController(), permanent: true);
-    RestaurantController restaurantController=Get.put(RestaurantController(), permanent: true);
-
-    /////////////////////////////////////////////////////////////////////////////////////////////
-
-    Random random = new Random();
-
-    /////////////////////////////////////////////////////////////////////////////////////////////
+    RestaurantController controller1 = Get.put(RestaurantController(), permanent: true);
 
     return Scaffold(
         body: Column(children: [
-          Spacer(flex: 39,),
+          SizedBox(height: 20.h,),
           Row(
             children: [
               SizedBox(
             width: 13.w,
           ),
               AutoSizeText(
-            'Salut ${LoginScreenController.user.nom} ,\nBienvenue dans notre magasin !',
+            'Salut ${AppController.user.nom} ,\nBienvenue dans notre magasin !',
             style: TextStyle(
               fontSize: 15.sp,
               fontFamily: 'Golos',
@@ -47,12 +43,10 @@ class Home extends StatelessWidget {
           ),
             ],
           ),
-          Spacer(flex: 26,),
+          SizedBox(height: 26.h,),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-            width: 13.w,
-          ),
               Container(
                 height: 56.h,
                 width: 401.w,
@@ -60,27 +54,23 @@ class Home extends StatelessWidget {
                   color: Color(0xffF6F6F6),
                   borderRadius: BorderRadius.circular(9.r)),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SizedBox(width: 11.w,),
+                    Image.asset('assets/images/camion.png'),
+                    SizedBox(width: 7.w,),
                     Expanded(
-                  child: Row(
-                    children: [
-                      SizedBox(width: 11.w,),
-                      Image.asset('assets/images/camion.png'),
-                      SizedBox(width: 7.w,),
-                      AutoSizeText(
-                        'Votre adresse\n${LoginScreenController.user.Adresse}',
+                      child: AutoSizeText(
+                       'Votre adresse\n${AppController.user.Adresse}',
                         style: TextStyle(
-                          fontFamily: 'Golos',
-                          fontSize: 15.sp,
+                        fontFamily: 'Golos',
+                        fontSize: 15.sp,
                         ),
                       ),
-                    ],
-                  ),
-                ),
+                    ),
                     TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context,'/adresse');
-                    },
+                    onPressed: ()=> {},
                     child: AutoSizeText(
                       'Modifier',
                       style: TextStyle(
@@ -89,13 +79,14 @@ class Home extends StatelessWidget {
                         fontFamily: 'Golos',
                         fontWeight: FontWeight.w400,
                       ),
-                    ))
+                    )),
+                    SizedBox(width: 9.w,)
                   ],
                 ),
           ),
             ],
           ),
-          Spacer(flex: 26,),
+          SizedBox(height: 26.h,),
           Row(
             children: [
                SizedBox(width: 13.w,),
@@ -109,9 +100,9 @@ class Home extends StatelessWidget {
               ),
             ],
             ),
-          Spacer(flex: 12,),
-          Expanded(
-            flex: 190,
+          SizedBox(height: 12.h,),
+          Container(
+            height: 153.h,
             child: ListView.builder(
                       physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
@@ -131,7 +122,7 @@ class Home extends StatelessWidget {
                       },
                      ),
           ),
-          Spacer(flex: 18,),
+          SizedBox(height: 18.h,),
           Row(
            children: [
             SizedBox(
@@ -146,9 +137,9 @@ class Home extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),]),
-          Spacer(flex: 16,),
-          Expanded(
-            flex: 110,
+          SizedBox(height: 16.h,),
+          Container(
+            height: 92.h,
             child: ListView.builder(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -164,9 +155,10 @@ class Home extends StatelessWidget {
                           width: 13.w,
                         ),
                         Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             InkWell(
-                              onTap:()=>Get.to(CategoryScreen(category_name: '$name',)),
+                              onTap:()=>Get.to(CategoryScreen(category_name: name,)),
                               child: Container(
                                height: 71.h,
                                width: 71.h,
@@ -203,7 +195,6 @@ class Home extends StatelessWidget {
                   );
                 }),
           ),
-         // Spacer(flex: 17,),
           Row(
             children: [
               Expanded(
@@ -223,7 +214,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               TextButton(
-                  onPressed: (){Get.to(()=>RestaurantsScreen());},
+                  onPressed: ()=>Get.to(RestaurantsScreen()),
                   child: AutoSizeText(
                     'Afficher tout',
                     style: TextStyle(
@@ -236,10 +227,8 @@ class Home extends StatelessWidget {
               SizedBox(width: 13.w,),
             ],
           ),
-          //Spacer(flex: 17,),
           Expanded(
-            flex: 280,
-            child:  ListView.builder(
+            child: ListView.builder(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -251,8 +240,7 @@ class Home extends StatelessWidget {
                     ],
                   )
                   ),
-            ),
-          Spacer(flex: 26,)
+          ),
         ],
       ),
     );

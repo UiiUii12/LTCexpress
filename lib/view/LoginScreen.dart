@@ -6,57 +6,76 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:livraison_app/classes/commande.dart';
 import 'package:livraison_app/view/OTPScreen.dart';
 import 'package:livraison_app/Controller/AppController.dart';
 import 'package:livraison_app/Controller/LoginScreenController.dart';
 
-
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
-    LoginScreenController controller=Get.put( LoginScreenController(),permanent: true ,) ;
+    LoginScreenController controller = Get.put(
+      LoginScreenController(),
+      permanent: true,
+    );
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
         color: Colors.white,
         child: Column(
           children: [
-            Spacer(flex: 101,),
+            Spacer(
+              flex: 101,
+            ),
             Row(
               children: [
-                SizedBox(width: 14.w,),
+                SizedBox(
+                  width: 14.w,
+                ),
                 Expanded(
                   child: AutoSizeText(
                     'Bienvenue dans notre\nlivraison de nourriture',
                     maxLines: 2,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 28.sp, fontFamily: 'Golos'
-                        ),
+                    style: TextStyle(fontSize: 28.sp, fontFamily: 'Golos'),
                   ),
                 )
               ],
             ),
-            Spacer(flex: 10,),
+            Spacer(
+              flex: 10,
+            ),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SizedBox(width: 14.w,),
-                Expanded(child: AutoSizeText(
-                  'Ajoutez vos informations personnelles pour faciliter\nle contact avec notre service',
-                  maxLines: 2,
-                  style: TextStyle(
-                    fontSize: 17.sp,
-                    color: Color(0xff807F7F),
-                    fontFamily: 'Golos',
+                SizedBox(
+                  width: 14.w,
+                ),
+                Expanded(
+                  child: AutoSizeText(
+                    'Ajoutez vos informations personnelles pour faciliter\nle contact avec notre service',
+                    maxLines: 2,
+                    style: TextStyle(
+                      fontSize: 17.sp,
+                      color: Color(0xff807F7F),
+                      fontFamily: 'Golos',
+                    ),
                   ),
-                ),),
-                SizedBox(width: 14.w,)
+                ),
+                SizedBox(
+                  width: 14.w,
+                )
               ],
             ),
-            Spacer(flex: 32,),
+            Spacer(
+              flex: 32,
+            ),
             Row(
               children: [
-                SizedBox(width: 14.w,),
+                SizedBox(
+                  width: 14.w,
+                ),
                 Expanded(
                   child: Align(
                     alignment: Alignment.topLeft,
@@ -71,7 +90,9 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(flex: 10,),
+            Spacer(
+              flex: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -83,15 +104,13 @@ class LoginScreen extends StatelessWidget {
                   width: 401.w,
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child:TextFormField(
+                    child: TextFormField(
                       textAlign: TextAlign.left,
-                      style: TextStyle(
-                          fontFamily: 'Golos',
-                          fontSize: 18.sp),
+                      style: TextStyle(fontFamily: 'Golos', fontSize: 18.sp),
                       cursorColor: Colors.grey,
                       enabled: true,
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsetsDirectional.only( start:11.w),
+                        contentPadding: EdgeInsetsDirectional.only(start: 11.w),
                         hintText: 'Ajouter votre nom',
                         hintStyle: TextStyle(
                           fontFamily: 'Golos',
@@ -108,7 +127,7 @@ class LoginScreen extends StatelessWidget {
                       textInputAction: TextInputAction.done,
                       textAlignVertical: TextAlignVertical.center,
                       controller: controller.nom,
-                      onChanged: (value){
+                      onChanged: (value) {
                         controller.onSubmitLogin();
                       },
                     ),
@@ -116,10 +135,14 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(flex: 32,),
+            Spacer(
+              flex: 32,
+            ),
             Row(
               children: [
-                SizedBox(width: 14.w,),
+                SizedBox(
+                  width: 14.w,
+                ),
                 Expanded(
                   child: Align(
                     alignment: Alignment.topLeft,
@@ -134,7 +157,9 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(flex: 10,),
+            Spacer(
+              flex: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -147,105 +172,119 @@ class LoginScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.center,
                     child: TextFormField(
-                      textAlignVertical: TextAlignVertical.center,
-                      style: TextStyle(
-                          //height: 1.5,
-                          fontFamily: 'Golos',
-                          fontSize: 18.sp),
-                      cursorColor: Colors.grey,
-                      enabled: true,
-                      decoration: InputDecoration(
-                        prefixIcon: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            SizedBox(width: 11.w),
-                            SvgPicture.asset('assets/images/icons8-algérie-48.svg'),
-                            SizedBox(
-                              width: 6.w,
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "+213",
-                                style: TextStyle(
-                                    fontSize: 18.sp, fontFamily: 'Golos'),
+                        textAlignVertical: TextAlignVertical.center,
+                        style: TextStyle(fontFamily: 'Golos', fontSize: 18.sp),
+                        cursorColor: Colors.grey,
+                        enabled: true,
+                        decoration: InputDecoration(
+                          prefixIcon: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(width: 11.w),
+                              SvgPicture.asset(
+                                  'assets/images/icons8-algérie-48.svg'),
+                              SizedBox(
+                                width: 6.w,
                               ),
-                            )
-                          ],
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "+213",
+                                  style: TextStyle(
+                                      fontSize: 18.sp, fontFamily: 'Golos'),
+                                ),
+                              )
+                            ],
+                          ),
+                          counterText: "",
+                          border: InputBorder.none,
+                          filled: true,
+                          fillColor: Colors.transparent,
+                          isCollapsed: true,
                         ),
-                        counterText: "",
-                        border: InputBorder.none,
-                        filled: true,
-                        fillColor: Colors.transparent,
-                        isCollapsed: true,
-                      ),
-                      keyboardType: TextInputType.phone,
-                      textInputAction: TextInputAction.done,
-                      maxLength: 9,
-                      //textAlignVertical: TextAlignVertical.center,
-                      controller:controller.phoneNumber,
-                      onChanged: (phoneNumber){
-                        controller.onSubmitLogin();
-                       if(controller.submit1&&controller.submit2){
-                          FocusScope.of(context).unfocus();
-                      };}
-                    ),
+                        keyboardType: TextInputType.phone,
+                        textInputAction: TextInputAction.done,
+                        maxLength: 9,
+                        //textAlignVertical: TextAlignVertical.center,
+                        controller: controller.phoneNumber,
+                        onChanged: (phoneNumber) {
+                          controller.onSubmitLogin();
+                          if (controller.submit1 && controller.submit2) {
+                            FocusScope.of(context).unfocus();
+                          }
+                          ;
+                        }),
                   ),
                 ),
-               // SizedBox(width: 14.w,),
+                // SizedBox(width: 14.w,),
               ],
             ),
-            Spacer(flex: 36,),
+            Spacer(
+              flex: 36,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: 401.w,
                   height: 56.h,
-                  child:
-                    GetBuilder(
-                      builder:(LoginScreenController controller)=> ElevatedButton(
-                        onPressed:controller.submit1&&controller.submit2 ?()async{
-                          AppController.showDialogLogin('vous recevrez un code pour vérifier','votre identité');
-                          await Future.delayed(Duration(milliseconds: 2000));
-                         if(controller.codeIsComing){ controller.createNewUser(controller.phoneNumber.text,controller.nom.text);
-                         Get.to( OTPScreen(phoneNumber: controller.phoneNumber),); }
-                        }:null,
-                        child: Text(
-                          'Continue',
-                          style: TextStyle(
-                            fontFamily: 'Golos',
-                            fontSize: 22.sp,
-                            color: Colors.white,
-                          ),
+                  child: GetBuilder(
+                    builder: (LoginScreenController controller) =>
+                        ElevatedButton(
+                      onPressed: controller.submit1 && controller.submit2
+                          ? () async {
+                              AppController.showDialogLogin(
+                                  'vous recevrez un code pour vérifier',
+                                  'votre identité');
+                              await Future.delayed(
+                                  Duration(milliseconds: 2000));
+                              if (controller.codeIsComing) {
+                                AppController.createNewUser(controller.nom.text,
+                                    controller.phoneNumber.text, '', <Commande>[].obs);
+                                Get.to(
+                                  OTPScreen(
+                                      phoneNumber: controller.phoneNumber),
+                                );
+                              }
+                            }
+                          : null,
+                      child: Text(
+                        'Continue',
+                        style: TextStyle(
+                          fontFamily: 'Golos',
+                          fontSize: 22.sp,
+                          color: Colors.white,
                         ),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xffE6424B),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(9.0),
-                               )),
                       ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xffE6424B),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(9.0),
+                          )),
                     ),
                   ),
+                ),
               ],
             ),
-            Spacer(flex: 36,),
+            Spacer(
+              flex: 36,
+            ),
             Align(
               alignment: Alignment.center,
               child: RichText(
                 maxLines: 1,
                 text: TextSpan(children: [
                   TextSpan(
-                      text:'Vous avez un problème ?',
+                      text: 'Vous avez un problème ?',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.sp,
                         fontFamily: 'Golos',
                       )),
                   TextSpan(
-                    recognizer:  TapGestureRecognizer()
-                      ..onTap = () => controller.onInDirectCall(),
-                      text:' Contactez-nous',
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () => controller.onInDirectCall(),
+                      text: ' Contactez-nous',
                       style: TextStyle(
                         color: Color(0xffE6424B),
                         fontSize: 18.sp,
@@ -254,11 +293,12 @@ class LoginScreen extends StatelessWidget {
                 ]),
               ),
             ),
-            Spacer(flex: 350,),
+            Spacer(
+              flex: 350,
+            ),
           ],
         ),
       ),
     );
   }
-
 }

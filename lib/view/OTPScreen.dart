@@ -167,6 +167,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                     'votre code est erroné veuillez ajouter',
                                     'un code valide',
                                     'assets/json/exclamation.json',
+                                      null
 
                                     );}}
                           : null,

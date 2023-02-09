@@ -13,7 +13,6 @@ class LoginScreenController extends GetxController {
   bool submit1=false;
   bool submit2=false;
   final Uri _number = Uri.parse('tel:+213556000010');
-  static late User user;
 
 
   @override
@@ -36,9 +35,7 @@ class LoginScreenController extends GetxController {
       throw 'Could not launch $_number';
     update();
   }
-  void createNewUser(String nom,String numTel){
-    user=User(nom,numTel);
-  }
+
 
 
 }

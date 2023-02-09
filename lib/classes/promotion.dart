@@ -26,50 +26,34 @@ class _PromotionState extends State<Promotion> {
   @override
   Widget build(BuildContext context) {
     //AppController controller=Get.put(permanent: true , AppController()) ;
-     return Column(
-       children: [
-         Expanded(
-           flex: 190,
-           child: Container(
-             width: 396.w,
-             decoration: BoxDecoration(
-                 borderRadius: BorderRadius.circular(9.r),
-                 color: HomeScreenController.ColorsPromo[HomeScreenController.ind.nextInt(7)],
-             ),
-             child: Row(
-               children: [
-                 SizedBox(width: 10.w,),
-                 Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                   children: [
-                     Spacer(flex:20,),
-                     AutoSizeText('${widget.nameRestaurant}',
-                       style: TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w500,fontSize: 15.sp,color: Colors.white),),
-                     Spacer(flex:4,),
-                     AutoSizeText('${widget.offre}',style:TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w500,fontSize: 16.sp,color: Colors.white),),
-                     Spacer(flex: 4,),
-                     AutoSizeText('${widget.descriptionOffre}',style: TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w400,fontSize: 15.sp,color: Colors.white),),
-                     Spacer(flex: 20,),
+     return Container(
+       height: 153.h,
+       width: 396.w,
+       decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(9.r),
+           color: HomeScreenController.ColorsPromo[HomeScreenController.ind.nextInt(7)],
+       ),
+       child: Row(
+         children: [
+           SizedBox(width: 10.w,),
+           Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+               SizedBox(height: 21.h,),
+               AutoSizeText('${widget.nameRestaurant}',
+                 style: TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w500,fontSize: 15.sp,color: Colors.white),),
+               SizedBox(height:6.h,),
+               AutoSizeText('${widget.offre}',style:TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w500,fontSize: 16.sp,color: Colors.white),),
+               SizedBox(height:6.h,),
+               AutoSizeText('${widget.descriptionOffre}',style: TextStyle(fontFamily: 'Golos',fontWeight: FontWeight.w400,fontSize: 15.sp,color: Colors.white),),
+               SizedBox(height:47.h,),
 
-                   ],
-                 ),
-                 SizedBox(width: 15.w,),
-                 Column(
-                   children: [
-                     Spacer(flex: 20,),
-                     Expanded(
-                      flex:112,
-                      child: Container(
-                          width:112.w,
-                          child: Image.asset('assets/images/promo1.png')),
-                    ),
-                     Spacer(flex: 20,),
-                   ],)
-               ],
-             ),
+             ],
            ),
-         ),
-       ],
+           Expanded(
+               child: Image.asset('assets/images/promo1.png'))
+         ],
+       ),
      );
   }
 

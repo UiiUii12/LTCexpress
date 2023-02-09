@@ -1,4 +1,5 @@
 import 'dart:core';
+import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class Food_Search extends StatelessWidget {
           RestaurantScreen_controller tab = Get.put(RestaurantScreen_controller() , permanent: true ) ;
           tab.inisialize(restaurant.category.length , 0) ;
 
-          Get.to( ()=>
+          Get.to(
               RestaurantScreen(image: restaurant.image, name: restaurant.name, category: restaurant.category, adress: restaurant.adress, state: restaurant.state, openTime: restaurant.openTime,)
           );
 

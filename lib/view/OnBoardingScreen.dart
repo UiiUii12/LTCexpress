@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 import 'package:livraison_app/Controller/Restaurants_controller.dart';
 import 'package:livraison_app/Themes/Theme.dart';
 import 'package:livraison_app/Controller/OnBoardingController.dart';
+import 'package:livraison_app/View/LoginScreen.dart';
 import 'Dots.dart';
 import 'OnBoardContent.dart';
-import 'RestaurantsScreen.dart';
 
 
 class OnBoardingScreen extends StatelessWidget {
@@ -60,9 +60,7 @@ class OnBoardingScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(9.0),
                           side: BorderSide(color: Colors.red))),
                   onPressed: () {
-                  Get.put(Restaurants_controller() , permanent: true) ;
-               //   Get.put(FoodController() , permanent: true) ;
-                 Get.to(() => RestaurantsScreen()) ;
+                   Get.to(() => LoginScreen()) ;
                   ; },
                   child: AutoSizeText('Continue' ,
                     style: theme().textTheme.headline2
